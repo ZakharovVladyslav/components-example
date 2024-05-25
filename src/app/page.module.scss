@@ -1,0 +1,17 @@
+@import "styles";
+
+.wrapper {
+   .title {
+      color: red;
+   }
+
+   .innerWrapper {
+      .innerTitle {
+         color: green;
+
+         @include xxxl-layout {
+            color: blue;
+         }
+      }
+   }
+}

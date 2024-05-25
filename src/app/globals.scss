@@ -1,0 +1,8 @@
+@import "styles";
+
+html,
+body {
+   @include full-screen;
+   @include zero-indent;
+   @include text-settings;
+}

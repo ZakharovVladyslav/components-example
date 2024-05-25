@@ -1,0 +1,19 @@
+@import "styles";
+
+.button {
+   @include button;
+
+   box-shadow: 0 3px 6px rgba(black, 0.16);
+}
+
+.left {
+   margin-right: auto;
+}
+
+.center {
+   margin: 0 auto;
+}
+
+.right {
+   margin-left: auto;
+}

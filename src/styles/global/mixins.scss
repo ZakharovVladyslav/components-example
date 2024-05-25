@@ -1,0 +1,56 @@
+@import "./variables.scss";
+
+@mixin button {
+   display: block;
+
+   border: none;
+
+   &:focus {
+      outline: none;
+   }
+}
+
+@mixin full-screen {
+   width: 100vw;
+   width: 100dvw;
+   height: 100vh;
+   height: 100dvh;
+}
+
+@mixin zero-indent {
+   margin: 0;
+   padding: 0;
+}
+
+@mixin zero-indent {
+   margin: 0;
+   padding: 0;
+}
+
+@mixin text-settings {
+   h1,
+   h2,
+   h3,
+   h4,
+   h5,
+   h6,
+   p {
+      @include zero-indent;
+   }
+}
+
+@mixin vertical-scroll {
+   overflow-y: auto;
+}
+
+@mixin horizontal-scroll {
+   overflow-x: auto;
+}
+
+/* LAYOUT */
+
+@mixin xxxl-layout {
+   @media (width > $xxxl-layout) {
+      @content;
+   }
+}
