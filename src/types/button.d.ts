@@ -1,6 +1,5 @@
-type TType = "primary" | "secondary" | "tertiary";
-type TSize = "small" | "medium" | "large";
-type TPosition = "left" | "right" | "center";
+type TType = 'primary' | 'secondary' | 'tertiary';
+type TSize = 'small' | 'medium' | 'large';
 
 type TButtonProps = {
    size?: TSize;
@@ -9,5 +8,5 @@ type TButtonProps = {
    children: ReactNode;
    onClick: VoidFunction;
    disabled?: boolean;
-   position?: TPosition;
+   position?: EPosition;
 };

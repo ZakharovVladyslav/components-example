@@ -1,55 +1,7 @@
 @import "styles";
 
 .button {
-   display: block;
-
-   box-shadow: 0 3px 6px rgba(black, 0.16);
-
-   border: none;
-
-   &:focus {
-      outline: none;
-   }
-}
-
-.small {
-   font-size: 12px;
-
-   padding: 8px 16px;
-
-   border-radius: 4px;
-}
-
-.medium {
-   font-size: 20px;
-
-   padding: 12px 24px;
-
-   border-radius: 8px;
-}
-
-.large {
-   font-size: 40px;
-
-   padding: 16px 32px;
-
-   border-radius: 12px;
-
-   @include xxxl-layout {
-      font-size: 60px;
-   }
-}
-
-.primary {
-   background-color: white;
-}
-
-.secondary {
-   background-color: red;
-}
-
-.tertiary {
-   background-color: green;
+   @include button;
 }
 
 .left {

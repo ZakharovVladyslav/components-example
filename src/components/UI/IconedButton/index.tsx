@@ -1,18 +1,19 @@
-"use client";
+'use client';
 
-import classNames from "classnames";
-import { MouseEvent } from "react";
+import classNames from 'classnames';
+import { MouseEvent } from 'react';
 
-import s from "./IconedButton.module.scss";
+import s from './IconedButton.module.scss';
 
 export const IconedButton = ({
-   size = "medium",
-   type = "primary",
-   className = "",
+   size = 'medium',
+   type = 'primary',
+   className = '',
    icon,
    onClick,
    disabled = false,
-   position = "center",
+   position = 'center',
+   label = '',
 }: TIconedButtonProps) => {
    const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
       e.preventDefault();
@@ -21,17 +22,11 @@ export const IconedButton = ({
 
    return (
       <button
-         className={classNames(
-            s.button,
-            s[size],
-            s[type],
-            s[position],
-            className
-         )}
+         className={classNames(s.button, s[size], s[type], s[position], className)}
          onClick={handleClick}
          disabled={disabled}
       >
-         {icon}
+         {icon} {label && <span className={s.label}>{label}</span>}
       </button>
    );
 };

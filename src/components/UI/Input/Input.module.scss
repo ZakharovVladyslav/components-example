@@ -1,0 +1,89 @@
+@import 'styles';
+
+.inputWrapper {
+   @include flex-column;
+   @include flex-vertical-start;
+
+   width: fit-content;
+
+   .label {
+      font-weight: 500;
+   }
+
+   .input {
+      @include input;
+   }
+
+   .errorWrapper {
+      @include flex;
+      @include flex-horiztonal-start;
+
+      span {
+         color: red;
+
+         font-weight: 700;
+      }
+
+      svg {
+         path {
+            fill: red;
+         }
+      }
+   }
+}
+
+.s {
+   gap: 2px;
+
+   .label {
+      font-size: 16px;
+      margin-left: 4px;
+   }
+
+   .input {
+      @include box-shadow-m;
+
+      padding: 10px 20px;
+
+      border-radius: 4px;
+
+      font-size: 16px;
+   }
+
+   .errorWrapper {
+      margin-left: 4px;
+
+      svg {
+         width: 16px;
+         height: 16px;
+      }
+   }
+}
+
+.m {
+   gap: 4px;
+
+   .label {
+      font-size: 24px;
+      margin-left: 8px;
+   }
+
+   .input {
+      @include box-shadow-m;
+
+      padding: 12px 24px;
+
+      border-radius: 8px;
+
+      font-size: 24px;
+   }
+
+   .errorWrapper {
+      margin-left: 8px;
+
+      svg {
+         width: 24px;
+         height: 24px;
+      }
+   }
+}

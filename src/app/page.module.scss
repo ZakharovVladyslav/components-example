@@ -1,17 +1,8 @@
-@import "styles";
+@import 'styles';
 
-.wrapper {
-   .title {
-      color: red;
-   }
+.main {
+   @include full-height;
 
-   .innerWrapper {
-      .innerTitle {
-         color: green;
-
-         @include xxxl-layout {
-            color: blue;
-         }
-      }
-   }
+   @include flex;
+   @include flex-center;
 }
