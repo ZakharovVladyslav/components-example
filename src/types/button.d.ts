@@ -1,12 +1,16 @@
-type TType = 'primary' | 'secondary' | 'tertiary';
-type TSize = 'small' | 'medium' | 'large';
+type TButtonVariant = 'primary';
+type TButtonType = 'button' | 'submit';
+type TButtonSize = 'm';
 
 type TButtonProps = {
-   size?: TSize;
-   type?: TType;
+   type?: TButtonType;
+   size?: TButtonSize;
+   variant?: TButtonVariant;
    className?: string;
    children: ReactNode;
    onClick: VoidFunction;
    disabled?: boolean;
+   label?: string;
+   id?: string;
    position?: EPosition;
 };

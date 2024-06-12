@@ -1,15 +1,24 @@
-type TType = 'primary' | 'secondary' | 'tertiary';
-type TSize = 'small' | 'medium' | 'large';
-type TIconPosition = 'left' | 'right';
+import { ReactNode } from 'react';
+
+type TIconedButtonVariant = 'primary';
+type TIconedButtonSize = 's' | 'm' | 'l';
+type TIconedButtonType = 'button' | 'submit';
+type TIconedButtonIconPosition = 'left' | 'right';
+
+type TIconedButtonIconProps = {
+   className?: string;
+};
 
 type TIconedButtonProps = {
-   size?: TSize;
-   type?: TType;
+   size?: TIconedButtonSize;
+   type?: TIconedButtonType;
+   variant?: TIconedButtonVariant;
    className?: string;
-   icon: ReactNode;
-   iconPosition?: TIconPosition;
+   icon: FC<TIconedButtonIconProps>;
+   iconPosition?: TIconedButtonIconPosition;
    onClick: VoidFunction;
    disabled?: boolean;
+   id?: string;
    position?: EPosition;
-   label?: string;
+   children?: ReactNode;
 };

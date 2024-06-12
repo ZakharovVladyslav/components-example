@@ -4,11 +4,9 @@ import classNames from 'classnames';
 
 import { WarnIcon } from '@/icons';
 
-import { IconedInput } from './iconed-input';
+import s from './iconed-input.module.scss';
 
-import s from './Input.module.scss';
-
-export const Input = ({
+export const IconedInput = ({
    onChange,
    value,
    disabled = false,
@@ -19,12 +17,16 @@ export const Input = ({
    className,
    error,
    position,
+   icon,
+   iconPosition = 'right',
    id,
-}: TInputProps) => {
+}: TIconedInputProps) => {
+   const Icon = icon;
+
    return (
       <div
          className={classNames(
-            s.inputWrapper,
+            s.iconedInputWrapper,
             s[size],
             s[variant],
             s[type],
@@ -34,13 +36,17 @@ export const Input = ({
       >
          {label && <label className={s.label}>{label}</label>}
 
-         <input
-            onChange={onChange}
-            value={value}
-            disabled={disabled}
-            className={s.input}
-            id={id && id}
-         />
+         <div className={classNames(s.inputWrapper, s[`icon-${iconPosition}`])}>
+            <input
+               onChange={onChange}
+               value={value}
+               disabled={disabled}
+               className={s.input}
+               id={id && id}
+            />
+
+            <Icon className={s.icon} />
+         </div>
 
          <div className={s.errorWrapper}>
             {error && (
@@ -53,5 +59,3 @@ export const Input = ({
       </div>
    );
 };
-
-Input.Iconed = IconedInput;

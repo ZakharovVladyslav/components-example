@@ -1,16 +1,25 @@
 @import 'styles';
 
-.inputWrapper {
-   @include flex(column, flex-start, flex-start);
-
+.iconedInputWrapper {
+   @include input;
+   @include flex(column, center, flex-start);
    width: fit-content;
 
    .label {
       font-weight: 500;
    }
 
-   .input {
-      @include input;
+   .inputWrapper {
+      @include flex(row, center, center, 4px);
+
+      .input {
+         @include input;
+      }
+
+      svg {
+         width: 16px;
+         height: 16px;
+      }
    }
 
    .errorWrapper {
@@ -40,7 +49,7 @@
       margin-left: 12px;
    }
 
-   .input {
+   .inputWrapper {
       @include box-shadow-m;
 
       padding: 12px 24px;
@@ -48,6 +57,10 @@
       border-radius: 8px;
 
       font-size: 24px;
+
+      .input {
+         font-size: 24px;
+      }
    }
 
    .errorWrapper {

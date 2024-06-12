@@ -1,17 +1,43 @@
-@import "styles";
+@import 'styles';
 
-.button {
-   @include button;
+.buttonWrapper {
+   @include flex(column, center, flex-start, 8px);
+
+   .button {
+      @include button;
+   }
 }
+
+/* VARIANTS */
+
+/* SIZES */
+
+.m {
+   .label {
+      margin-left: 12px;
+   }
+
+   .button {
+      @include box-shadow-m;
+
+      font-size: 24px;
+
+      padding: 12px 24px;
+
+      border-radius: 8px;
+   }
+}
+
+/* POSITION */
 
 .left {
-   margin-right: auto;
-}
-
-.center {
-   margin: 0 auto;
+   @include align-left;
 }
 
 .right {
-   margin-left: auto;
+   @include align-right;
+}
+
+.center {
+   @include align-center;
 }
