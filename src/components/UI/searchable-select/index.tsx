@@ -34,6 +34,17 @@ import s from './searchable-select.module.scss';
          value: value && `Option ${value}`,
       });
    };
+
+   ...
+
+   <SearchableSelect
+      value={value?.key || ''}
+      displayingValue={value?.value || ''}
+      onChange={handleChange}
+      setOption={handleSelect}
+      options={options}
+      placeholder="Placeholder"
+   />
  * ----------------------------------------------------------------------
  */
 
