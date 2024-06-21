@@ -1,25 +1,25 @@
 @import 'styles';
 
-.inputWrapper {
-   @include flex(column, flex-start, flex-start);
+.wrapper {
+   @include input;
 
-   width: fit-content;
+   .inputWrapper {
+      .input {
+         @include input;
+      }
+   }
+}
 
+/* VARIANTS */
+
+.primary {
    .label {
       font-weight: 500;
    }
 
-   .input {
-      @include input;
-   }
-
    .errorWrapper {
-      @include flex(row, flex-start, center, 4px);
-
       span {
          color: red;
-
-         font-weight: 700;
       }
 
       svg {
@@ -33,27 +33,41 @@
 /* SIZES */
 
 .m {
-   gap: 8px;
+   @include flex(column, center, flex-start, 8px);
+
+   width: fit-content;
 
    .label {
       font-size: 16px;
       margin-left: 12px;
    }
 
-   .input {
+   .inputWrapper {
+      @include flex(row, center, center, 4px);
       @include box-shadow-m;
 
       padding: 12px 24px;
 
       border-radius: 8px;
 
-      font-size: 24px;
+      .input {
+         font-size: 24px;
+      }
+
+      svg {
+         width: 16px;
+         height: 16px;
+      }
    }
 
    .errorWrapper {
-      gap: 8px;
+      @include flex(row, flex-start, center, 4px);
 
       margin-left: 8px;
+
+      span {
+         font-weight: 700;
+      }
 
       svg {
          width: 24px;

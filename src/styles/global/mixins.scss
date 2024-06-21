@@ -120,3 +120,13 @@
    gap: $gap;
    flex-wrap: $wrap;
 }
+
+/* UTILS */
+
+@mixin hover {
+   @media (hover: hover) {
+      &:not(:disabled):hover {
+         @content;
+      }
+   }
+}

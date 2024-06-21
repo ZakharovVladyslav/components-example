@@ -4,7 +4,6 @@ import classNames from 'classnames';
 import { MouseEvent } from 'react';
 
 import s from './button.module.scss';
-import { IconedButton } from './iconed-button';
 
 export const Button = ({
    size = 'm',
@@ -48,5 +47,3 @@ export const Button = ({
       </div>
    );
 };
-
-Button.Iconed = IconedButton;

@@ -1,17 +1,24 @@
-type TInputSize = 'm';
-type TInputVariant = 'primary';
-type TInputType = 'text' | 'password' | 'email' | 'number' | 'tel';
+type TIconedInputSize = 'm';
+type TIconedInputVariant = 'primary';
+type TIconedInputType = 'text' | 'password' | 'email' | 'number' | 'tel';
+type TIconedInputIconPosition = 'left' | 'right';
+type TIconedInputIconProps = {
+   className?: string;
+};
 
 type TInputProps = {
    label?: string;
    onChange: ChangeEventHandler<HTMLInputElement>;
    value: string;
-   size?: TInputSize;
-   variant?: TInputVariant;
-   type?: TInputType;
+   size?: TIconedInputSize;
+   variant?: TIconedInputVariant;
+   placeholder?: string;
+   type?: TIconedInputType;
    disabled?: boolean;
    className?: string;
    error?: string;
-   position?: EPosition;
    id?: string;
+   icon?: FC<TIconedInputIconProps>;
+   iconPosition?: TIconedInputIconPosition;
+   position?: EPosition;
 };
