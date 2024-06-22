@@ -18,6 +18,10 @@
    &:focus-visible {
       outline: none;
    }
+
+   &:disabled {
+      cursor: not-allowed;
+   }
 }
 
 @mixin input {
@@ -83,11 +87,11 @@
 /* SHADOW */
 
 @mixin box-shadow-s {
-   box-shadow: 0 3px 6px rgba(black, 0.15);
+   box-shadow: 0 3px 6px rgba($primary, 0.15);
 }
 
 @mixin box-shadow-m {
-   box-shadow: 0 6px 12px rgba(black, 0.15);
+   box-shadow: 0 6px 12px rgba($primary, 0.15);
 }
 
 /* ALIGNMENT */

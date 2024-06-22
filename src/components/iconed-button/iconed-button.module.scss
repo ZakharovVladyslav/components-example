@@ -8,6 +8,22 @@
 
 /* VARIANTS */
 
+.primary {
+   svg {
+      path {
+         fill: $primary;
+      }
+   }
+
+   &:disabled {
+      svg {
+         path {
+            fill: rgba($primary, 0.5);
+         }
+      }
+   }
+}
+
 /* SIZES */
 
 .m {

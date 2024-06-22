@@ -21,6 +21,7 @@ export const Input = ({
    iconPosition = 'right',
    placeholder,
    id,
+   optional,
 }: TInputProps) => {
    const Icon = icon;
 
@@ -35,7 +36,12 @@ export const Input = ({
             className,
          )}
       >
-         {label && <label className={s.label}>{label}</label>}
+         {label && (
+            <label className={s.label}>
+               {label}{' '}
+               {optional && <span className={s.optional}>&#40;Optional&#41;</span>}
+            </label>
+         )}
 
          <div className={classNames(s.inputWrapper, s[`icon-${iconPosition}`])}>
             <input
@@ -50,14 +56,12 @@ export const Input = ({
             {icon && <Icon className={s.icon} />}
          </div>
 
-         <div className={s.errorWrapper}>
-            {error && (
-               <>
-                  <WarnIcon className={s.icon} />
-                  <span className={s.error}>{error}</span>
-               </>
-            )}
-         </div>
+         {error && (
+            <div className={s.errorWrapper}>
+               <WarnIcon className={s.icon} />
+               <span className={s.error}>{error}</span>
+            </div>
+         )}
       </div>
    );
 };

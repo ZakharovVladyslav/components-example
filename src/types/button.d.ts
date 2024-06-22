@@ -10,7 +10,6 @@ type TButtonProps = {
    children: ReactNode;
    onClick: VoidFunction;
    disabled?: boolean;
-   label?: string;
    id?: string;
    position?: EPosition;
 };

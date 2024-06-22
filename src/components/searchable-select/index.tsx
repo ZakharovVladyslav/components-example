@@ -62,6 +62,7 @@ export const SearchableSelect = ({
    className,
    id = '',
    disabled = false,
+   optional = false,
 }: TSearchableSelectProps) => {
    const [filteredOptions, setFilteredOptions] = useState<TOption[]>(options);
 
@@ -90,7 +91,12 @@ export const SearchableSelect = ({
             error && s.errored,
          )}
       >
-         {label && <label className={s.label}>{label}</label>}
+         {label && (
+            <label className={s.label}>
+               {label}{' '}
+               {optional && <span className={s.optional}>&#40;Optional&#41;</span>}
+            </label>
+         )}
 
          <Combobox
             className={s.searchableSelectWrapper}
@@ -125,14 +131,12 @@ export const SearchableSelect = ({
             </ComboboxOptions>
          </Combobox>
 
-         <div className={s.errorWrapper}>
-            {error && (
-               <>
-                  <WarnIcon className={s.warnIcon} />
-                  <span className={s.error}>{error}</span>
-               </>
-            )}
-         </div>
+         {error && (
+            <div className={s.errorWrapper}>
+               <WarnIcon className={s.warnIcon} />
+               <span className={s.error}>{error}</span>
+            </div>
+         )}
       </div>
    );
 };

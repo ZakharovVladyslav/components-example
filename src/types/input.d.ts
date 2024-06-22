@@ -21,4 +21,5 @@ type TInputProps = {
    icon?: FC<TIconedInputIconProps>;
    iconPosition?: TIconedInputIconPosition;
    position?: EPosition;
+   optional?: boolean;
 };

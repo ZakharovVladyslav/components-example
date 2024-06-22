@@ -15,4 +15,5 @@ type TSearchableSelectProps = {
    id?: string;
    onChange: (event: ChangeEvent<HTMLInputElement>) => void;
    setOption: (option: string) => void;
+   optional?: boolean;
 };

@@ -1,6 +1,12 @@
 @import 'styles';
 
 .wrapper {
+   .label {
+      .optional {
+         font-size: 0.75em;
+      }
+   }
+
    .searchableSelectWrapper {
       position: relative;
 
@@ -110,6 +116,12 @@
 /* VARIANTS */
 
 .primary {
+   .label {
+      .optional {
+         color: rgba($primary, 0.5);
+      }
+   }
+
    .select {
       .placeholder {
          color: rgba(0, 0, 0, 0.5);
